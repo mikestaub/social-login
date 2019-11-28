@@ -4,25 +4,29 @@
 		"email": "julien@twenty-six-medias.com",
 		"url": "http://www.twenty-six-medias.com/"
 	},
-	"name": "social-login",
+	"name": "@mikestaub/social-login",
 	"description": "social-login",
 	"version": "0.3.0",
 	"contributors": [
 		{
 			"name": "Pagevamp",
 			"email": "julien@pagevamp.com"
+		},
+		{
+			"name": "Mike Staub",
+			"email": "mikestaub22@gmail.com"
 		}
 	],
-	"homepage": "https://github.com/26medias/social-login",
+	"homepage": "https://github.com/mikestaub/social-login",
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": "https://raw.github.com/26medias/social-login/master/LICENSE"
+			"url": "https://raw.github.com/mikestaub/social-login/master/LICENSE"
 		}
 	],
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/26medias/social-login.git"
+		"url": "git://github.com/mikestaub/social-login.git"
 	},
 	"main": "social-login.js",
 	"engines": {
@@ -52,6 +56,6 @@
 	"devDependencies": {},
 	"readmeFilename": "README.md",
 	"bugs": {
-		"url": "https://github.com/26medias/social-login/issues"
+		"url": "https://github.com/mikestaub/social-login/issues"
 	}
 }
