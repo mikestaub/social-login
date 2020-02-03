@@ -17,7 +17,6 @@ var TumblrStrategy 		= require('passport-tumblr').Strategy;
 var SnapchatStrategy  = require('passport-snapchat').Strategy;
 
 /* Misc */
-var toolset 	= require('toolset');
 var _ 			= require('underscore');
 
 
@@ -172,10 +171,9 @@ socialLoginClass.prototype.init = function() {
 	
 }
 socialLoginClass.prototype.setup = function(type, settings) {
-	//toolset.log("Setting up:", type);
 	var scope = this;
 	if (!this.map[type]) {
-		toolset.error("Error!",'type "'+type+'" is not supported.');
+		console.error("Error: type '" + type + '" is not supported.');
 		return false;
 	}
 	
@@ -217,7 +215,7 @@ socialLoginClass.prototype.setup = function(type, settings) {
 		passportSetup = _.extend(passportSetup, this.specialCases[type].setup);
 	}
 	
-	//toolset.log("passportSetup", passportSetup);
+	//console.log("passportSetup:" + passportSetup);
 	
 	// Execute the passport strategy
 	//passport.use(new (this.map[type])(passportSetup, settings.methods.auth));
@@ -234,7 +232,7 @@ socialLoginClass.prototype.setup = function(type, settings) {
 	this.app.get(settings.url.auth, passport.authenticate(strategyName, settings.settings.authParameters || {}));
 	
 	// Setup the callback url (/auth/:service/callback)
-	//toolset.log("strategyName", strategyName);
+	//console.log("strategyName:" + strategyName);
 	this.app.get(settings.url.callback, passport.authenticate(strategyName, {
 		successRedirect: 	settings.url.success,
 		failureRedirect: 	settings.url.fail,
@@ -246,7 +244,7 @@ socialLoginClass.prototype.setup = function(type, settings) {
 // 
 socialLoginClass.prototype.preparseProfileData = function(type, profile) {
 	
-	//toolset.log("Profile", profile);
+	//console.log("Profile:" + profile);
 	
 	
 	var data = profile._json;
